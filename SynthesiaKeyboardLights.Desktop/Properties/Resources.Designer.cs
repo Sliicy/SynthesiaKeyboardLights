@@ -59,45 +59,5 @@ namespace SynthesiaKeyboardLights.Desktop.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Left_Hand_Black_Key {
-            get {
-                object obj = ResourceManager.GetObject("Left_Hand_Black_Key", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Left_Hand_White_Key {
-            get {
-                object obj = ResourceManager.GetObject("Left_Hand_White_Key", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Right_Hand_Black_Key {
-            get {
-                object obj = ResourceManager.GetObject("Right_Hand_Black_Key", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Right_Hand_White_Key {
-            get {
-                object obj = ResourceManager.GetObject("Right_Hand_White_Key", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

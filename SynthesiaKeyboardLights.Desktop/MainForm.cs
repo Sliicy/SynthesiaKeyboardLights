@@ -211,6 +211,12 @@ namespace SynthesiaKeyboardLights.Desktop
             // Calculate the new height to capture
             int captureHeight = (int)(height * 0.28f);
 
+            if (width == 0 || captureHeight == 0)
+            {
+                chkEnabled.Checked = false;
+                return;
+            }
+
             // Create a new bitmap with the adjusted dimensions
             Bitmap bmp = new Bitmap(width, captureHeight);
 
@@ -351,6 +357,10 @@ namespace SynthesiaKeyboardLights.Desktop
 
         private void ChkEnabled_CheckedChanged(object sender, EventArgs e)
         {
+            if (chkEnabled.Checked)
+            {
+                SynthesiaWindow = GetWindow();
+            }
             tmrPiano.Enabled = chkEnabled.Checked;
         }
     }

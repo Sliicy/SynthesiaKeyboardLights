@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tmrPiano = new System.Windows.Forms.Timer(this.components);
             this.chkEnabled = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tmrPiano
@@ -51,12 +53,25 @@
             this.chkEnabled.UseVisualStyleBackColor = true;
             this.chkEnabled.CheckedChanged += new System.EventHandler(this.ChkEnabled_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 52);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "How to use:\r\n1: Open Synthesia.\r\n2: Start a song.\r\n3: Enjoy!";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 109);
+            this.ClientSize = new System.Drawing.Size(346, 155);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.chkEnabled);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Synthesia Keyboard Lights";
@@ -69,6 +84,7 @@
         #endregion
         private System.Windows.Forms.Timer tmrPiano;
         private System.Windows.Forms.CheckBox chkEnabled;
+        private System.Windows.Forms.Label label1;
     }
 }
 
