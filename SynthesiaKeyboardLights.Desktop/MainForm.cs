@@ -192,6 +192,28 @@ namespace SynthesiaKeyboardLights.Desktop
             }
         }
 
+        private void ClearKeys()
+        {
+            keyboard['A'].Color = Color.Black;
+            keyboard['S'].Color = Color.Black;
+            keyboard['D'].Color = Color.Black;
+            keyboard['F'].Color = Color.Black;
+            keyboard['G'].Color = Color.Black;
+            keyboard['H'].Color = Color.Black;
+            keyboard['J'].Color = Color.Black;
+            keyboard['K'].Color = Color.Black;
+            keyboard['L'].Color = Color.Black;
+            keyboard[CorsairLedId.SemicolonAndColon].Color = Color.Black;
+            keyboard[CorsairLedId.ApostropheAndDoubleQuote].Color = Color.Black;
+            keyboard['W'].Color = Color.Black;
+            keyboard['E'].Color = Color.Black;
+            keyboard['T'].Color = Color.Black;
+            keyboard['Y'].Color = Color.Black;
+            keyboard['U'].Color = Color.Black;
+            keyboard['O'].Color = Color.Black;
+            keyboard['P'].Color = Color.Black;
+        }
+
         private void TmrPiano_Tick(object sender, EventArgs e)
         {
             if (SynthesiaWindow == null)
@@ -200,6 +222,7 @@ namespace SynthesiaKeyboardLights.Desktop
             }
             if (SynthesiaWindow == null)
             {
+                chkEnabled.Checked = false;
                 return;
             }
 
@@ -236,24 +259,7 @@ namespace SynthesiaKeyboardLights.Desktop
             // Release the device context
             ReleaseDC(SynthesiaWindow, hdcSrc);
 
-            keyboard['A'].Color = Color.Black;
-            keyboard['S'].Color = Color.Black;
-            keyboard['D'].Color = Color.Black;
-            keyboard['F'].Color = Color.Black;
-            keyboard['G'].Color = Color.Black;
-            keyboard['H'].Color = Color.Black;
-            keyboard['J'].Color = Color.Black;
-            keyboard['K'].Color = Color.Black;
-            keyboard['L'].Color = Color.Black;
-            keyboard[CorsairLedId.SemicolonAndColon].Color = Color.Black;
-            keyboard[CorsairLedId.ApostropheAndDoubleQuote].Color = Color.Black;
-            keyboard['W'].Color = Color.Black;
-            keyboard['E'].Color = Color.Black;
-            keyboard['T'].Color = Color.Black;
-            keyboard['Y'].Color = Color.Black;
-            keyboard['U'].Color = Color.Black;
-            keyboard['O'].Color = Color.Black;
-            keyboard['P'].Color = Color.Black;
+            ClearKeys();
 
             foreach (PianoKey pk in (PianoKey[])Enum.GetValues(typeof(PianoKey)))
             {
@@ -360,6 +366,10 @@ namespace SynthesiaKeyboardLights.Desktop
             if (chkEnabled.Checked)
             {
                 SynthesiaWindow = GetWindow();
+            } else
+            {
+                ClearKeys();
+                keyboard.Update();
             }
             tmrPiano.Enabled = chkEnabled.Checked;
         }
